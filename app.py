@@ -1402,7 +1402,8 @@ def kick_member(community_id, user_id):
     return redirect(url_for('community_members', community_id=community_id))
 
 if __name__ == '__main__':
+    from os import environ
     with app.app_context():
         db.create_all()
         update_database()
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(environ.get("PORT", 5000)))

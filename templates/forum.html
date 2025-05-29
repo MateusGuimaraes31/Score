@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateVoteUI(button, data) {
         const reviewCard = button.closest('.review-card');
         const responseCard = button.closest('.response-card');
-        const parentElement = reviewCard || responseCard; // Encontra o pai mais próximo (review ou response)
+        const parentElement = responseCard || reviewCard; // Encontra o pai mais próximo (review ou response)
 
         if (parentElement) {
             // Atualiza contadores
